@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayerSdkBindingLib.Android", "LayerSdkBindingLib.Android\LayerSdkBindingLib.Android.csproj", "{912D5E8E-EE29-4504-B9CC-D370C5D7AF42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLayerQuickStartAndroid", "SimpleLayerQuickStartAndroid\SimpleLayerQuickStartAndroid.csproj", "{2867D3B9-61AA-4678-9399-652D619A335B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayerQuickStartAndroid", "LayerQuickStartAndroid\LayerQuickStartAndroid.csproj", "{5A3B4DA2-EE4A-4474-938F-6CCA47013565}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{912D5E8E-EE29-4504-B9CC-D370C5D7AF42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{912D5E8E-EE29-4504-B9CC-D370C5D7AF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{912D5E8E-EE29-4504-B9CC-D370C5D7AF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{912D5E8E-EE29-4504-B9CC-D370C5D7AF42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2867D3B9-61AA-4678-9399-652D619A335B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2867D3B9-61AA-4678-9399-652D619A335B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2867D3B9-61AA-4678-9399-652D619A335B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2867D3B9-61AA-4678-9399-652D619A335B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2867D3B9-61AA-4678-9399-652D619A335B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2867D3B9-61AA-4678-9399-652D619A335B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5A3B4DA2-EE4A-4474-938F-6CCA47013565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A3B4DA2-EE4A-4474-938F-6CCA47013565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A3B4DA2-EE4A-4474-938F-6CCA47013565}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5A3B4DA2-EE4A-4474-938F-6CCA47013565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A3B4DA2-EE4A-4474-938F-6CCA47013565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A3B4DA2-EE4A-4474-938F-6CCA47013565}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

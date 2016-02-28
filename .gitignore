@@ -1,0 +1,10 @@
+.vs/
+Components/
+*.user
+LayerQuickStartAndroid/bin/
+LayerQuickStartAndroid/obj/
+LayerSdkBindingLib.Android/bin/
+LayerSdkBindingLib.Android/obj/
+SimpleLayerQuickStartAndroid/bin/
+SimpleLayerQuickStartAndroid/obj/
+packages/

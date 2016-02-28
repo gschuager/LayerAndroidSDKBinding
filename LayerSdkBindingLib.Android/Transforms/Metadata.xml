@@ -1,0 +1,105 @@
+<metadata>
+  
+    <!-- First and foremost - Remove obfuscated classes -->
+    <remove-node path="/api/package[@name='com.lsdka.lsdka']" />
+    <remove-node path="/api/package[@name='com.lsdka.lsdka.lsdka']" />
+    <remove-node path="/api/package[@name='com.lsdka.lsdka.lsdka.lsdka']" />
+    <remove-node path="/api/package[@name='com.lsdka.lsdka.lsdka.lsdkb']" />
+    <remove-node path="/api/package[@name='com.lsdka.lsdka.lsdka.lsdkc']" />
+    <remove-node path="/api/package[@name='com.layer.transport']" />
+    <remove-node path="/api/package[@name='com.layer.transport.auth']" />
+    <remove-node path="/api/package[@name='com.layer.transport.auth.lsdka']" />
+    <remove-node path="/api/package[@name='com.layer.transport.lsdka']" />
+    <remove-node path="/api/package[@name='com.layer.transport.lsdkb']" />
+    <remove-node path="/api/package[@name='com.layer.transport.lsdkc']" />
+    <remove-node path="/api/package[@name='com.layer.transport.lsdkd']" />
+    <remove-node path="/api/package[@name='com.layer.transport.thrift']" />
+    <remove-node path="/api/package[@name='com.layer.transport.thrift.policy']" />
+    <remove-node path="/api/package[@name='com.layer.transport.thrift.sync']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdka']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkb']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkc']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkc.lsdka']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkd']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkd.lsdka']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdke']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdke.lsdka']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdke.lsdkb']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdke.lsdkb.lsdka']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdke.lsdkb.lsdkb']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdke.lsdkb.lsdkc']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdke.lsdkc']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkf']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkg']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkh']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdki']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdki.lsdka']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdki.lsdkb']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdki.lsdkc']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdki.lsdkc.lsdka']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdki.lsdkc.lsdkb']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkj']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkk']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkk.lsdka']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkk.lsdkb']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkk.lsdkc']" />
+    
+    <!--<attr path="/api/package[@name='com.layer.transport.lsdkc']/class[@name='i.10']" name="obfuscated">true</attr> -->
+
+    <!-- Fix for generics erasure on inherited accessor methods, ie. prevent the bindings generator from converting a `get` or `set` method to a property -->
+    <attr path="/api/package[@name='com.layer.sdk.messaging']/class[@name='Metadata.Entry']/method[@name='getKey']" name="propertyName"></attr>
+    <attr path="/api/package[@name='com.layer.sdk.messaging']/class[@name='Metadata.Entry']/method[@name='getValue']" name="propertyName"></attr>
+    
+    <!-- Fix for Java.Lang.Object.Clone() covariant return type override -->
+    <remove-node path="/api/package[@name='com.layer.sdk']/class[@name='LayerClient.Options']/method[@name='clone']" />
+    
+    <!-- Fix for FxDG naming violation: Type name matches namespace part -->
+    <attr path="/api/package[@name='com.layer.sdk.policy']/class[@name='Policy']" name="managedName">LayerPolicy</attr>
+    <attr path="/api/package[@name='com.layer.sdk.query']/class[@name='Query']" name="managedName">LayerQuery</attr>
+
+    <!-- Fix for getType method name hiding managed object.Type() property -->
+    <attr path="/api/package[@name='com.layer.sdk.exceptions']/class[@name='LayerException']/method[@name='getType']" name="name">getEnumType</attr>
+    <attr path="/api/package[@name='com.layer.sdk.query']/class[@name='CompoundPredicate']/method[@name='getType']" name="name">getEnumType</attr>
+    <attr path="/api/package[@name='com.layer.sdk.query']/class[@name='Predicate.Operator']/method[@name='getType']" name="name">getEnumType</attr>
+    <attr path="/api/package[@name='com.layer.sdk.services']/class[@name='LayerReceiver.ServiceEvent']/method[@name='getType']" name="name">getEnumType</attr>
+
+    <!-- Fix for inner class hides inherited member, ie. inner class name matching one from the ancestor's inner class name as well -->
+    <attr path="/api/package[@name='com.layer.sdk.query']/interface[@name='RecyclerViewController.Callback']" name="managedName">RecyclerViewController.RVCCallback</attr>
+
+    <!-- Fix for obsolete member overrides non-obsolete member, ie. deprecated flag not matching one present in the overriden member -->
+    <!--<attr path="/api/package[@name='com.layer.sdk']/class[@name='LayerClient']/method[@name='getUnreadMessageCount']" name="managedObsolete">obsolete</attr>-->
+
+    <!-- Fix for subtype that extends only a supertype that was obfuscated and therefore has been excluded -->
+    <remove-node path="/api/package[@name='com.layer.sdk.services']/interface[@name='LayerReceiver.Listener']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.a']" />
+    
+    <!-- Fix for types that get invalidated due to them (minor-)deriving from removed (obfuscated) supertypes -->
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerProgressListener.BackgroundThread.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerProgressListener.BackgroundThread']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.a']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerProgressListener.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerAuthenticationListener.BackgroundThread.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerAuthenticationListener.BackgroundThread']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.a']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerAuthenticationListener.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerConnectionListener.BackgroundThread.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerConnectionListener.BackgroundThread']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.a']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerConnectionListener.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerChangeEventListener.BackgroundThread.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerChangeEventListener.BackgroundThread']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.a']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerChangeEventListener.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerObjectExceptionListener.BackgroundThread.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerObjectExceptionListener.BackgroundThread']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.a']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerObjectExceptionListener.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerPolicyListener.BackgroundThread.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerPolicyListener.BackgroundThread']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.a']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerPolicyListener.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerSyncListener.BackgroundThread.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerSyncListener.BackgroundThread']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.a']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerSyncListener.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerTypingIndicatorListener.BackgroundThread.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerTypingIndicatorListener.BackgroundThread']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.a']" />
+    <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerTypingIndicatorListener.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
+
+    <!-- Fix for IntentService subclasses so they extend mono.android.app.IntentService instead of android.app.IntentService -->
+    <attr path="/api/package[@name='com.layer.sdk.services']/class[@name='GcmIntentService']" name="extends">mono.android.app.IntentService</attr>
+
+</metadata>
