@@ -1,6 +1,6 @@
 # LayerAndroidSDKBinding
 
-Xamarin.Android binding for the Layer Android SDK.
+Xamarin.Android binding for the Layer Android SDK. Also including C# port of the quick-start-android sample app.
 
 ## License
 
