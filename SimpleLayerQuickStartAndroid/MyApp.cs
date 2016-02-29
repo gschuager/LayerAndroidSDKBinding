@@ -8,8 +8,8 @@ namespace SimpleLayerQuickStartAndroid
     [Application]
     public class MyApp : Application
     {
-        private const string LAYER_APP_ID = "layer:///apps/staging/84619680-c934-11e5-b013-c41ce00f3df8";
-        private const string GCM_PROJECT_NUMBER = "683239104564";
+        private const string LAYER_APP_ID = "";
+        private const string GCM_PROJECT_NUMBER = "";
 
         public static MyApp Instance { get; private set; }
 
