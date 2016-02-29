@@ -32,7 +32,7 @@ namespace Com.Layer.QuickStartAndroid
     {
         //Replace this with your App ID from the Layer Developer page.
         //Go http://developer.layer.com, click on "Dashboard" and select "Keys"
-        public const string LAYER_APP_ID = "layer:///apps/staging/84619680-c934-11e5-b013-c41ce00f3df8";
+        public const string LAYER_APP_ID = "";
 
         //Optional: Enable Push Notifications
         // Layer uses Google Cloud Messaging for Push Notifications. Go to
@@ -41,7 +41,7 @@ namespace Com.Layer.QuickStartAndroid
         // an invalid Project Number is used here, the Layer SDK will function, but
         // users will not receive Notifications when the app is closed or in the
         // background).
-        public const string GCM_PROJECT_NUMBER = "683239104564";
+        public const string GCM_PROJECT_NUMBER = "";
 
 
         //Global variables used to manage the Layer Client and the conversations in this app
