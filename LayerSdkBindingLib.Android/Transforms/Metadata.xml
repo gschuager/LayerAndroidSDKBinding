@@ -72,7 +72,12 @@
 
     <!-- Fix for subtype that extends only a supertype that was obfuscated and therefore has been excluded -->
     <remove-node path="/api/package[@name='com.layer.sdk.services']/interface[@name='LayerReceiver.Listener']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.a']" />
-    
+
+    <!-- Fix for protected methods that uses a type that was obfuscated, ie. therefore cannot be exposed -->
+    <remove-node path="/api/package[@name='com.layer.sdk.messaging']/class[@name='Metadata']/method[@name='a' and count(parameter)=1]" />
+    <remove-node path="/api/package[@name='com.layer.sdk.messaging']/class[@name='Metadata']/method[@name='a' and count(parameter)=2]" />
+    <remove-node path="/api/package[@name='com.layer.sdk.messaging']/class[@name='Metadata']/method[@name='b']" />
+
     <!-- Fix for types that get invalidated due to them (minor-)deriving from removed (obfuscated) supertypes -->
     <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerProgressListener.BackgroundThread.Weak']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.e']" />
     <remove-node path="/api/package[@name='com.layer.sdk.listeners']/interface[@name='LayerProgressListener.BackgroundThread']/implements[@name='com.layer.sdk.lsdka.lsdkk.i.a']" />
@@ -101,5 +106,8 @@
 
     <!-- Fix for IntentService subclasses so they extend mono.android.app.IntentService instead of android.app.IntentService -->
     <attr path="/api/package[@name='com.layer.sdk.services']/class[@name='GcmIntentService']" name="extends">mono.android.app.IntentService</attr>
+
+    <!-- Fix for interface type that define methods that already get inherited from a superinterface, ie. remove the definition as unnecessary -->
+    <remove-node path="/api/package[@name='com.layer.sdk.messaging']/interface[@name='Message']/method[@name='getId']" />
 
 </metadata>

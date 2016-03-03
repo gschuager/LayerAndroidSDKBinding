@@ -8,7 +8,7 @@ using Com.Layer.Sdk.Changes;
 using Com.Layer.Sdk.Exceptions;
 using Com.Layer.Sdk.Listeners;
 using Com.Layer.Sdk.Messaging;
-using Com.Layer.Sdk.QueryNS;
+using Com.Layer.Sdk.Query;
 using Java.Lang;
 using System;
 using System.Collections;
@@ -149,14 +149,14 @@ namespace Com.Layer.QuickStartAndroid
         {
             if (activeConversation == null)
             {
-                Query query = Query.InvokeBuilder(Java.Lang.Class.FromType(typeof(Conversation)))
+                LayerQuery query = LayerQuery.InvokeBuilder(Java.Lang.Class.FromType(typeof(Conversation)))
                         .Predicate(new Predicate(Conversation.Property.Participants, 
                             Predicate.Operator.EqualTo, new Java.Util.ArrayList(MainActivity.GetAllParticipants())))
                         .SortDescriptor(new SortDescriptor(Conversation.Property.CreatedAt,
                             SortDescriptor.Order.Descending))
                         .Build();
 
-                IList results = layerClient.ExecuteQuery(query, Query.ResultType.Objects);
+                IList results = layerClient.ExecuteQuery(query, LayerQuery.ResultType.Objects);
                 if (results != null && results.Count > 0) 
                 {
                     return results[0] as Conversation;
