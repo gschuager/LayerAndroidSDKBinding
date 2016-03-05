@@ -309,7 +309,7 @@ namespace Com.Layer.QuickStartAndroid
                 LayerChange change = changes[i];
                 if (change.ObjectType == LayerObjectType.Conversation)
                 {
-                    Conversation conversation = (Conversation) change.Object;
+                    Conversation conversation = change.GetObject<Conversation>();
                     Log.Verbose(TAG, "Conversation " + conversation.Id + " attribute " +
                             change.AttributeName + " was changed from " + change.OldValue +
                             " to " + change.NewValue);
@@ -326,22 +326,19 @@ namespace Com.Layer.QuickStartAndroid
                 }
                 else if (change.ObjectType == LayerObjectType.Message)
                 {
-                    IMessage message = change.Object as IMessage;
-                    if (message != null) // ie. because for some weird reason on the Xamarin binding, the Object could be a non IMessage subclass!
-                    {
-                        Log.Verbose(TAG, "Message " + message.Id + " attribute " + change
-                                .AttributeName + " was changed from " + change.OldValue +
-                                " to " + change.NewValue);
+                    IMessage message = change.GetObject<IMessage>();
+                    Log.Verbose(TAG, "Message " + message.Id + " attribute " + change
+                            .AttributeName + " was changed from " + change.OldValue +
+                            " to " + change.NewValue);
 
-                        if (LayerChange.Type.Insert == change.ChangeType)
-                        {
-                        }
-                        else if (LayerChange.Type.Update == change.ChangeType)
-                        {
-                        }
-                        else if (LayerChange.Type.Delete == change.ChangeType)
-                        {
-                        }
+                    if (LayerChange.Type.Insert == change.ChangeType)
+                    {
+                    }
+                    else if (LayerChange.Type.Update == change.ChangeType)
+                    {
+                    }
+                    else if (LayerChange.Type.Delete == change.ChangeType)
+                    {
                     }
                 }
             }
