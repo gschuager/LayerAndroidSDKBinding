@@ -1,10 +1,10 @@
-# LayerAndroidSDKBinding
+## LayerAndroidSDKBinding
 
 Xamarin.Android binding for the Layer Android SDK. Also including C# port of the quick-start-android sample app.
 
-# Installation
+## Installation
 
-Available to install from NuGet:
+Package is available from NuGet. To install, run the following command in the Package Manager Console:
 ```posh
 PM> Install-Package WiyonoAten.Layer.Sdk.Xamarin.Android
 ```
