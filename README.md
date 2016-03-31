@@ -2,6 +2,13 @@
 
 Xamarin.Android binding for the Layer Android SDK. Also including C# port of the quick-start-android sample app.
 
+# Installation
+
+Available to install from NuGet:
+```posh
+PM> Install-Package WiyonoAten.Layer.Sdk.Xamarin.Android
+```
+
 ## License
 
 Copyright 2013-2016 Wiyono Aten
