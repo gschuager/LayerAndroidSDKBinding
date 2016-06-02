@@ -6,14 +6,14 @@
     <remove-node path="/api/package[@name='com.lsdka.lsdka.lsdka.lsdka']" />
     <remove-node path="/api/package[@name='com.lsdka.lsdka.lsdka.lsdkb']" />
     <remove-node path="/api/package[@name='com.lsdka.lsdka.lsdka.lsdkc']" />
-    <remove-node path="/api/package[@name='com.layer.transport']" />
+<!--    <remove-node path="/api/package[@name='com.layer.transport']" />-->
     <remove-node path="/api/package[@name='com.layer.transport.auth']" />
     <remove-node path="/api/package[@name='com.layer.transport.auth.lsdka']" />
     <remove-node path="/api/package[@name='com.layer.transport.lsdka']" />
     <remove-node path="/api/package[@name='com.layer.transport.lsdkb']" />
     <remove-node path="/api/package[@name='com.layer.transport.lsdkc']" />
     <remove-node path="/api/package[@name='com.layer.transport.lsdkd']" />
-    <remove-node path="/api/package[@name='com.layer.transport.thrift']" />
+<!--    <remove-node path="/api/package[@name='com.layer.transport.thrift']" />-->
     <remove-node path="/api/package[@name='com.layer.transport.thrift.policy']" />
     <remove-node path="/api/package[@name='com.layer.transport.thrift.sync']" />
     <remove-node path="/api/package[@name='com.layer.sdk.lsdka']" />
