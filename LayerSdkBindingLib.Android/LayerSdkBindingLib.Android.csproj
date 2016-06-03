@@ -67,7 +67,7 @@
   <ItemGroup>
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
-    <LibraryProjectZip Include="Jars\layer-sdk-0.19.2.aar" />
+    <LibraryProjectZip Include="Jars\layer-sdk-0.21.0.aar" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

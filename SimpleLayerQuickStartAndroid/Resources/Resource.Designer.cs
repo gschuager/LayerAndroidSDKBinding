@@ -60,8 +60,11 @@ namespace SimpleLayerQuickStartAndroid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050001
+			public const int MyButton = 2131034113;
+			
 			// aapt resource value: 0x7f050000
-			public const int MyButton = 2131034112;
+			public const int text = 2131034112;
 			
 			static Id()
 			{
@@ -96,7 +99,7 @@ namespace SimpleLayerQuickStartAndroid
 			public const int ApplicationName = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			public const int Send = 2130968576;
 			
 			static String()
 			{

@@ -16,6 +16,8 @@
 <!--    <remove-node path="/api/package[@name='com.layer.transport.thrift']" />-->
     <remove-node path="/api/package[@name='com.layer.transport.thrift.policy']" />
     <remove-node path="/api/package[@name='com.layer.transport.thrift.sync']" />
+    <remove-node path="/api/package[@name='com.layer.transport.thrift.identity']" />
+    <remove-node path="/api/package[@name='com.layer.transport.thrift.scrlk.badging']" />
     <remove-node path="/api/package[@name='com.layer.sdk.lsdka']" />
     <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdka']" />
     <remove-node path="/api/package[@name='com.layer.sdk.lsdka.lsdkb']" />

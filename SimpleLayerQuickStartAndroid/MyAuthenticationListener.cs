@@ -50,7 +50,7 @@ namespace SimpleLayerQuickStartAndroid
             {
                 return "Simulator";
             }
-            return "Device";
+            return "1";
         }
 
         private class AcquireIdentityTokenAsyncTask : AsyncTask<Java.Lang.Void, Java.Lang.Void, Java.Lang.Void>
